@@ -15,6 +15,6 @@ services:
       REGISTRY_AUTH_HTPASSWD_REALM: Registry Realm
       REGISTRY_HTTP_ADDR: 0.0.0.0:5000
     volumes:
-      - ./certs/data:/var/lib/registry
-      - ./certs:/certs
-      - ./certs/auth:/auth
+      - ./foreign/docker-registry-certs/certs/data:/var/lib/registry
+      - ./foreign/docker-registry-certs/certs:/certs
+      - ./foreign/docker-registry-certs/certs/auth:/auth
