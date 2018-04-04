@@ -1,12 +1,10 @@
 Docker Registry Deploy Instructions
 ================================
 
-### Generate Certificate
+### Get Certificate
 
-Generate certificates for Docker Registry
-(or use one provided by a Certificate Authority):
-
-    ./generate-cert.sh
+Be sure to clone this repository with --recursive flag.
+Otherwise, docker-compose will fail to initialize.
 
 ### Run Image
 
