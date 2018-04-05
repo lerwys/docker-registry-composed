@@ -10,9 +10,6 @@ services:
     environment:
       REGISTRY_HTTP_TLS_CERTIFICATE: /certs/domain.crt
       REGISTRY_HTTP_TLS_KEY: /certs/domain.key
-      REGISTRY_AUTH: htpasswd
-      REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd
-      REGISTRY_AUTH_HTPASSWD_REALM: Registry Realm
       REGISTRY_HTTP_ADDR: 0.0.0.0:5000
     volumes:
       - ./foreign/docker-registry-certs/certs/data:/var/lib/registry
