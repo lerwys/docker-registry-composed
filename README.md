@@ -20,3 +20,16 @@ on the host computer with the following commands:
 ### Run Image
 
     docker-compose up -d
+
+### Migrate DockerHub images to personal Docker Registry
+
+Replace "dockerregistry.lnls-sirius.com.br" with your docker registry
+DNS address and "lnlsdig" with your DockerHub organization, if any.
+More instructions can be found at: [migrator project](https://github.com/docker/migrator)
+
+    docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock \
+    -v /etc/docker/certs.d:/etc/docker/certs.d:ro -e V1_REGISTRY=docker.io \
+    --add-host dockerregistry.lnls-sirius.com.br:10.2.128.31 \
+    -e USE_INSECURE_CURL=true -e V2_REGISTRY=dockerregistry.lnls-sirius.com.br \
+    -e DOCKER_HUB_ORG=lnlsdig -e V1_REPO_FILTER="epics-ioc" docker/migrator 2>&1 | \
+    tee migration.log
