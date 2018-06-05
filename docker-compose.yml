@@ -3,7 +3,7 @@ version: '3'
 services:
   registry:
     restart: always
-    image: registry:2
+    image: registry:2.6.2
     ports:
       - "443:5000/tcp"
     container_name: registry
