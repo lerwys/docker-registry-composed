@@ -17,6 +17,10 @@ on the host computer with the following commands:
     sudo cp ./foreign/docker-registry-certs/certs/domain.crt /usr/local/share/ca-certificates/dockerregistry.lnls-sirius.com.br.crt
     sudo update-ca-certificates
 
+Restart Docker with the following command:
+
+    systemctl restart docker.service
+
 ### Run Image
 
     docker-compose up -d
