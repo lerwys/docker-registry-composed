@@ -6,6 +6,9 @@ services:
     image: registry:2.6.2
     ports:
       - "443:5000/tcp"
+    logging:
+      options:
+        max-size: 50m
     container_name: registry
     environment:
       REGISTRY_HTTP_TLS_CERTIFICATE: /certs/domain.crt
